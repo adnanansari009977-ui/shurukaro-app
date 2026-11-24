@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 
 interface ProgressHeaderProps {
   currentStep: number;
@@ -33,8 +34,9 @@ export const ProgressHeader: React.FC<ProgressHeaderProps> = ({
               <span>Back</span>
             </button>
           ) : (
-            <div className="min-h-[44px] flex items-center text-sm font-bold text-[#0F766E]">
-              ShuruKaro
+            <div className="min-h-[44px] inline-flex items-center gap-2 text-base font-extrabold text-[#0F766E] whitespace-nowrap">
+              <BrandLogo size={28} />
+              <span>ShuruKaro</span>
             </div>
           )}
         </div>

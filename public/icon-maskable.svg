@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ShuruKaro Maskable App Logo">
+  <defs>
+    <linearGradient id="emeraldBgMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="goldGradMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed Emerald Background for Android Adaptive Masking -->
+  <rect x="0" y="0" width="512" height="512" fill="url(#emeraldBgMask)" />
+
+  <!-- Centered Emblem inside 76% Safe Zone (12% margin all around) -->
+  <g transform="translate(256, 256) scale(0.74) translate(-256, -256)">
+    <path d="M124 190 L124 146 M106 164 L124 142 L142 164" stroke="#FDE68A" stroke-opacity="0.6" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M388 190 L388 146 M370 164 L388 142 L406 164" stroke="#FDE68A" stroke-opacity="0.6" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <path d="M188 292 L130 344 C122 351 126 364 137 364 L192 364 Z" fill="url(#goldGradMask)" />
+    <path d="M324 292 L382 344 C390 351 386 364 375 364 L320 364 Z" fill="url(#goldGradMask)" />
+
+    <path d="M256 72 L364 196 C370 203 365 214 356 214 L322 214 L322 356 C322 365 315 372 306 372 L206 372 C197 372 190 365 190 356 L190 214 L156 214 C147 214 142 203 148 196 Z" fill="#FFFFFF" />
+    <path d="M256 72 L292 114 L220 114 Z" fill="url(#goldGradMask)" />
+
+    <circle cx="256" cy="272" r="56" fill="#047857" stroke="#FBBF24" stroke-width="6" />
+
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M234 244 H278" stroke="#FDE68A" stroke-width="10" />
+      <path d="M234 263 H278" stroke="#FDE68A" stroke-width="10" />
+      <path d="M242 244 C264 244 268 278 242 280 L274 306" stroke="#FFFFFF" stroke-width="10" />
+    </g>
+
+    <path d="M220 388 L256 446 L292 388 Z" fill="url(#goldGradMask)" />
+    <path d="M238 388 L256 420 L274 388 Z" fill="#FFFFFF" fill-opacity="0.9" />
+  </g>
+</svg>

@@ -7,6 +7,8 @@ import {
   Lock,
   Sparkles,
 } from 'lucide-react';
+import { BrandLogo } from '../components/BrandLogo';
+import { PWAInstallBanner } from '../components/PWAInstallButton';
 import { Toast } from '../components/Toast';
 import { useApp } from '../context/AppContext';
 import { ActionPlanScreen } from '../screens/ActionPlanScreen';
@@ -52,13 +54,14 @@ export const AppNavigator: React.FC = () => {
       {/* Desktop & Mobile Top App Bar (3-zone contract on desktop, compact 52px on mobile) */}
       <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-4 sm:gap-8">
-          {/* Zone 1: Single text element wordmark */}
+          {/* Zone 1: Brand icon + single-line wordmark */}
           <button
             type="button"
             onClick={() => setActiveTab('ideas')}
-            className="text-lg sm:text-xl font-extrabold tracking-tight text-[#0F766E] whitespace-nowrap shrink-0 cursor-pointer"
+            className="inline-flex items-center gap-2.5 text-lg sm:text-xl font-extrabold tracking-tight text-[#0F766E] whitespace-nowrap shrink-0 cursor-pointer"
           >
-            ShuruKaro
+            <BrandLogo size={32} />
+            <span>ShuruKaro</span>
           </button>
 
           {/* Zone 2: Clean single-line nav links on desktop */}
@@ -119,6 +122,7 @@ export const AppNavigator: React.FC = () => {
 
       {/* Main Content Area */}
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-5 sm:py-8 pb-24 md:pb-12">
+        <PWAInstallBanner />
         {activeTab === 'ideas' && <IdeasScreen />}
         {activeTab === 'plan' && <ActionPlanScreen />}
         {activeTab === 'estimator' && <EstimatorScreen />}
