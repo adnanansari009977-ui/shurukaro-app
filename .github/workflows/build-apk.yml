@@ -32,10 +32,10 @@ jobs:
 
       - name: Initialize Capacitor if needed
         run: |
-          if [ ! -f capacitor.config.json ] && [ ! -f capacitor.config.ts ]; then
+          npm install --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
+          if [ ! -f capacitor.config.json ] && [ ! -f capacitor.config.ts ] && [ ! -f capacitor.config.mjs ]; then
             npx cap init ShuruKaro com.adnan.shurukaro --web-dir=dist
           fi
-          npm install --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
           if [ ! -d android ]; then
             npx cap add android
           fi
