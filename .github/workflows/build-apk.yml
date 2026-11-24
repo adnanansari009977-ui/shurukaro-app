@@ -17,25 +17,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
 
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version: '17'
 
       - name: Install dependencies and build web app
         run: |
           npm install
           npm run build
 
-      - name: Initialize Capacitor and Android project
+      - name: Initialize Capacitor if needed
         run: |
-          npm install --no-save @capacitor/core @capacitor/cli @capacitor/android
           if [ ! -f capacitor.config.json ] && [ ! -f capacitor.config.ts ]; then
             npx cap init ShuruKaro com.adnan.shurukaro --web-dir=dist
           fi
+          npm install @capacitor/core @capacitor/cli @capacitor/android
           if [ ! -d android ]; then
             npx cap add android
           fi
@@ -45,10 +44,11 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleDebug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ShuruKaro-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
+          
