@@ -50,7 +50,9 @@ export interface ActionPlanStep {
   day: string;
   phase: 1 | 2;
   title: string;
+  whatToDo: string;
   tip: string;
+  avoidMistake?: string;
 }
 
 export interface StartupCostItem {
@@ -95,6 +97,7 @@ export interface BusinessIdea {
   startupCosts: StartupCostItem[];
   whyItFitsMap: Record<FearId, string>;
   commonMistakes: string[];
+  phase2Teaser?: string;
   actionPlan: ActionPlanStep[];
   customerWays: string[];
   pitches: PitchTemplate[];
